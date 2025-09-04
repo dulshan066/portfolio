@@ -5,21 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sri Dulshan Kokila Senavirathna Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+Sinhala&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+JP&family=Noto+Sans+Sinhala&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body class="en">
+
+  <!-- Language Switch -->
+  <div class="lang-switch">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('si')">SI</button>
+    <button onclick="setLang('jp')">JP</button>
+  </div>
 
   <!-- Navigation -->
   <nav>
     <div class="nav-container">
       <div class="logo">Dulshan</div>
-      <div class="language-switcher">
-        <button id="en-btn">EN</button>
-        <button id="si-btn">සිංහල</button>
-        <button id="jp-btn">日本語</button>
-      </div>
       <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
       <ul class="nav-list">
         <li><a href="#home" class="nav-link">Home</a></li>
@@ -35,128 +36,121 @@
   <!-- Hero Section -->
   <header id="home">
     <div class="hero">
-      <h1><span class="typed"></span></h1>
-      <p class="typed-subtitle"></p>
-      <a href="#projects" class="btn">View My Work</a>
-      <div class="hero-bg"></div>
+      <h1>
+        <span class="lang en">Hi, I'm Sri Dulshan Kokila Senavirathna</span>
+        <span class="lang si">හෙලෝ, මම ශ්‍රී දුල්ෂන් කොකිලා සේනවිරත්න</span>
+        <span class="lang jp">こんにちは、私はスリ・ドルシャン・コキラ・セナヴィラトナです</span>
+      </h1>
+      <p class="typed-subtitle">
+        <span class="lang en">Undergraduate at LNBTI | BSc (Hons) Computing</span>
+        <span class="lang si">LNBTI උපාධි පාඨමාලා ශිෂ්‍යයෙක් | BSc (Hons) Computing</span>
+        <span class="lang jp">LNBTI学部在籍 | BSc (Hons) コンピューティング</span>
+      </p>
+      <a href="#projects" class="btn">
+        <span class="lang en">View My Work</span>
+        <span class="lang si">මගේ වැඩ බලන්න</span>
+        <span class="lang jp">作品を見る</span>
+      </a>
     </div>
   </header>
 
   <!-- About Section -->
   <section id="about" class="fade-in">
-    <h2></h2>
-    <p></p>
-    <div class="personal-info">
-      <p><strong>Full Name:</strong> Sri Parakramabahu Patabandi Gedara Dulshan Kokila Senavirathna</p>
-      <p><strong>Date of Birth:</strong> April 21, 2001</p>
-      <p><strong>Permanent Address:</strong> No 95, Welegedarawatta, Marukona, Ukuwela, Matale, Sri Lanka</p>
-      <p><strong>Education:</strong> Undergraduate, BSc (Hons) Computing, LNBTI</p>
-    </div>
+    <h2>
+      <span class="lang en">About Me</span>
+      <span class="lang si">මම ගැන</span>
+      <span class="lang jp">私について</span>
+    </h2>
+    <p>
+      <span class="lang en">Hello! I'm Sri Dulshan Kokila Senavirathna, born on April 21, 2001. I am passionate about Embedded Systems, Web Development, and creating innovative tech solutions.</span>
+      <span class="lang si">හෙලෝ! මම ශ්‍රී දුල්ෂන් කොකිලා සේනවිරත්න. 2001 අප්‍රේල් 21 වන දින උපන්. මම Embedded Systems, Web Development, සහ නව්‍ය තාක්ෂණික විසඳුම් පිළිබඳ උනන්දුවෙන් සිටිමි.</span>
+      <span class="lang jp">こんにちは！私はスリ・ドルシャン・コキラ・セナヴィラトナです。2001年4月21日生まれです。組み込みシステム、ウェブ開発、革新的な技術ソリューションに情熱を注いでいます。</span>
+    </p>
   </section>
 
   <!-- Skills Section -->
   <section id="skills" class="fade-in">
-    <h2></h2>
+    <h2>
+      <span class="lang en">Skills</span>
+      <span class="lang si">නපුරුෂ</span>
+      <span class="lang jp">スキル</span>
+    </h2>
     <div class="skills-container">
       <div class="skill">
-        <h3>Embedded Systems</h3>
+        <h3>
+          <span class="lang en">Embedded Systems</span>
+          <span class="lang si">එම්බෙඩඩ් පද්ධති</span>
+          <span class="lang jp">組み込みシステム</span>
+        </h3>
         <div class="skill-bar"><div class="skill-fill" data-fill="90%"></div></div>
       </div>
       <div class="skill">
-        <h3>Web Development</h3>
+        <h3>
+          <span class="lang en">Web Development</span>
+          <span class="lang si">වෙබ් සංවර්ධන</span>
+          <span class="lang jp">ウェブ開発</span>
+        </h3>
         <div class="skill-bar"><div class="skill-fill" data-fill="85%"></div></div>
       </div>
       <div class="skill">
-        <h3>Python & AI</h3>
+        <h3>
+          <span class="lang en">Python & AI</span>
+          <span class="lang si">පයිතන් සහ AI</span>
+          <span class="lang jp">PythonとAI</span>
+        </h3>
         <div class="skill-bar"><div class="skill-fill" data-fill="80%"></div></div>
-      </div>
-      <div class="skill">
-        <h3>PHP & Databases</h3>
-        <div class="skill-bar"><div class="skill-fill" data-fill="75%"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="fade-in">
-    <h2></h2>
-    <div class="experience-container">
-      <div class="counter-card">
-        <h3>Projects Completed</h3>
-        <span class="counter" data-target="25">0</span>
-      </div>
-      <div class="counter-card">
-        <h3>Clients Worked</h3>
-        <span class="counter" data-target="10">0</span>
-      </div>
-      <div class="counter-card">
-        <h3>Years of Experience</h3>
-        <span class="counter" data-target="3">0</span>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects" class="fade-in">
-    <h2></h2>
+    <h2>
+      <span class="lang en">Projects</span>
+      <span class="lang si">ව්‍යාපෘති</span>
+      <span class="lang jp">プロジェクト</span>
+    </h2>
     <div class="carousel">
       <div class="carousel-track">
-        <div class="project-card" data-title="Smart Dustbin System" data-description="An automated waste sorting system using sensors and AI." data-image="images/project1.png">
-          <img src="images/project1.png" alt="Smart Dustbin System">
-          <h3>Smart Dustbin System</h3>
+        <div class="project-card" data-title="Smart Dustbin" data-description="Automated waste sorting system with sensors.">
+          <img src="images/project1.png" alt="Smart Dustbin">
+          <h3>Smart Dustbin</h3>
         </div>
-        <div class="project-card" data-title="Ground Booking System" data-description="A web-based ground booking system with full CRUD functionality." data-image="images/project2.png">
-          <img src="images/project2.png" alt="Ground Booking System">
-          <h3>Ground Booking System</h3>
-        </div>
-        <div class="project-card" data-title="Motivation Lanka App" data-description="A Sinhala quotes app with TTS, sharing, favorites, and AdMob integration." data-image="images/project3.png">
-          <img src="images/project3.png" alt="Motivation Lanka App">
-          <h3>Motivation Lanka App</h3>
+        <div class="project-card" data-title="Ground Booking" data-description="Web-based booking system with full CRUD functionality.">
+          <img src="images/project2.png" alt="Ground Booking">
+          <h3>Ground Booking</h3>
         </div>
       </div>
       <button class="carousel-btn left"><i class="fas fa-chevron-left"></i></button>
       <button class="carousel-btn right"><i class="fas fa-chevron-right"></i></button>
     </div>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-      <span class="lightbox-close">&times;</span>
-      <img class="lightbox-img" src="" alt="">
-      <h3 class="lightbox-title"></h3>
-      <p class="lightbox-desc"></p>
-      <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
-      <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
-    </div>
   </section>
-
-  <!-- Floating Social Icons -->
-  <div class="social-float">
-    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-  </div>
 
   <!-- Contact Section -->
   <section id="contact" class="fade-in">
-    <h2></h2>
-    <div class="contact-container">
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-        <p class="form-msg"></p>
-      </form>
-    </div>
+    <h2>
+      <span class="lang en">Contact Me</span>
+      <span class="lang si">සම්බන්ධ වන්න</span>
+      <span class="lang jp">お問い合わせ</span>
+    </h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+      <p class="form-msg"></p>
+    </form>
   </section>
 
   <footer>
-    <p></p>
+    <p>&copy; 2025 Sri Dulshan Kokila Senavirathna. All rights reserved.</p>
   </footer>
 
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
   <script src="js/script.js"></script>
+  <script>
+    function setLang(lang){
+      document.body.className = lang;
+    }
+  </script>
 </body>
 </html>
