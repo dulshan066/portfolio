@@ -132,27 +132,30 @@ counterObserver.observe(counterSection);
 // =====================
 // EmailJS Contact Form Fixed
 // =====================
-emailjs.init('oKiMYahq-jcUHrFZB'); // User ID
+emailjs.init('oKiMYahq-jcUHrFZB'); // Public Key
 
-const contactForm=document.getElementById('contact-form');
-const formMsg=document.querySelector('.form-msg');
+const contactForm = document.getElementById('contact-form');
+const formMsg = document.querySelector('.form-msg');
 
-contactForm.addEventListener('submit',function(e){
+contactForm.addEventListener('submit', function(e){
   e.preventDefault();
-  const formData={
-    name:contactForm.querySelector('input[name="name"]').value,
-    email:contactForm.querySelector('input[name="email"]').value,
-    message:contactForm.querySelector('textarea[name="message"]').value
+
+  const formData = {
+    name: contactForm.querySelector('input[name="name"]').value,
+    email: contactForm.querySelector('input[name="email"]').value,
+    message: contactForm.querySelector('textarea[name="message"]').value
   };
-  emailjs.send('service_jkz24uj','template_ckkn8rl',formData)
-    .then(response=>{
-      formMsg.style.color="#88d3ce";
-      formMsg.innerText="Message Sent Successfully!";
+
+  emailjs.send('service_jkz24uj', 'template_iioq13k', formData)
+    .then(response => {
+      formMsg.style.color = "#88d3ce";
+      formMsg.innerText = "Message Sent Successfully!";
       contactForm.reset();
-      console.log('SUCCESS!',response.status,response.text);
-    },err=>{
-      formMsg.style.color="red";
-      formMsg.innerText="Failed to send message. Try again later.";
-      console.error('FAILED...',err);
+      console.log('SUCCESS!', response.status, response.text);
+    }, err => {
+      formMsg.style.color = "red";
+      formMsg.innerText = "Failed to send message. Try again later.";
+      console.error('FAILED...', err);
     });
 });
+
