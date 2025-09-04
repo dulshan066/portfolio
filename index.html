@@ -11,12 +11,17 @@
 <body>
   <!-- Navigation -->
   <nav>
-    <ul>
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
+    <div class="nav-container">
+      <div class="logo">Dulshan</div>
+      <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+      <ul class="nav-list">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Hero Section -->
@@ -25,6 +30,7 @@
       <h1>Hi, I'm <span class="typed">Sri Parakramabahu Patabandi Gedara Dulshan Kokila Senavirathna</span></h1>
       <p class="typed-subtitle">Undergraduate at LNBTI | BSc (Hons) Computing</p>
       <a href="#projects" class="btn">View My Work</a>
+      <div class="hero-bg"></div>
     </div>
   </header>
 
@@ -45,28 +51,59 @@
     </div>
   </section>
 
+  <!-- Skills Section -->
+  <section id="skills" class="fade-in">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill">
+        <h3>Embedded Systems</h3>
+        <div class="skill-bar"><div class="skill-fill" data-fill="90%"></div></div>
+      </div>
+      <div class="skill">
+        <h3>Web Development</h3>
+        <div class="skill-bar"><div class="skill-fill" data-fill="85%"></div></div>
+      </div>
+      <div class="skill">
+        <h3>Python & AI</h3>
+        <div class="skill-bar"><div class="skill-fill" data-fill="80%"></div></div>
+      </div>
+      <div class="skill">
+        <h3>PHP & Databases</h3>
+        <div class="skill-bar"><div class="skill-fill" data-fill="75%"></div></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
   <section id="projects" class="fade-in">
     <h2>Projects</h2>
-    <div class="project-list">
-      <div class="project-card">
-        <img src="images/project1.png" alt="Smart Dustbin System">
-        <h3>Smart Dustbin System</h3>
-        <p>An automated waste sorting system using sensors and AI.</p>
-        <a href="#" target="_blank">View Project</a>
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="project-card" data-title="Smart Dustbin System" data-description="An automated waste sorting system using sensors and AI." data-image="images/project1.png">
+          <img src="images/project1.png" alt="Smart Dustbin System">
+          <h3>Smart Dustbin System</h3>
+        </div>
+        <div class="project-card" data-title="Ground Booking System" data-description="A web-based ground booking system with full CRUD functionality." data-image="images/project2.png">
+          <img src="images/project2.png" alt="Ground Booking System">
+          <h3>Ground Booking System</h3>
+        </div>
+        <div class="project-card" data-title="Motivation Lanka App" data-description="A Sinhala quotes app with TTS, sharing, favorites, and AdMob integration." data-image="images/project3.png">
+          <img src="images/project3.png" alt="Motivation Lanka App">
+          <h3>Motivation Lanka App</h3>
+        </div>
       </div>
-      <div class="project-card">
-        <img src="images/project2.png" alt="Ground Booking System">
-        <h3>Ground Booking System</h3>
-        <p>A web-based ground booking system with full CRUD functionality.</p>
-        <a href="#" target="_blank">View Project</a>
-      </div>
-      <div class="project-card">
-        <img src="images/project3.png" alt="Motivation Lanka App">
-        <h3>Motivation Lanka App</h3>
-        <p>A Sinhala quotes app with TTS, sharing, favorites, and AdMob integration.</p>
-        <a href="#" target="_blank">View Project</a>
-      </div>
+      <button class="carousel-btn left"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-btn right"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-img" src="" alt="">
+      <h3 class="lightbox-title"></h3>
+      <p class="lightbox-desc"></p>
+      <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
     </div>
   </section>
 
