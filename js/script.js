@@ -76,13 +76,12 @@ btnRight.addEventListener('click', () => {
   if(position > -(track.children.length - 3) * slideWidth) position -= slideWidth;
   track.style.transform = `translateX(${position}px)`;
 });
-
 btnLeft.addEventListener('click', () => {
-  if(position < 0) position += slideWidth
+  if(position < 0) position += slideWidth;
   track.style.transform = `translateX(${position}px)`;
 });
 
-// Lightbox Functionality
+// Lightbox
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.querySelector('.lightbox-img');
 const lightboxTitle = document.querySelector('.lightbox-title');
@@ -90,11 +89,10 @@ const lightboxDesc = document.querySelector('.lightbox-desc');
 const lightboxClose = document.querySelector('.lightbox-close');
 const lightboxPrev = document.querySelector('.lightbox-prev');
 const lightboxNext = document.querySelector('.lightbox-next');
-
 let currentIndex = 0;
 const projects = document.querySelectorAll('.project-card');
 
-function openLightbox(index) {
+function openLightbox(index){
   currentIndex = index;
   const card = projects[currentIndex];
   lightboxImg.src = card.dataset.image;
@@ -103,58 +101,58 @@ function openLightbox(index) {
   lightbox.style.display = 'flex';
 }
 
-projects.forEach((card, i) => card.addEventListener('click', () => openLightbox(i)));
-lightboxClose.addEventListener('click', () => lightbox.style.display = 'none');
-lightbox.addEventListener('click', e => { if(e.target === lightbox) lightbox.style.display = 'none'; });
+projects.forEach((card,i)=>card.addEventListener('click',()=>openLightbox(i)));
+lightboxClose.addEventListener('click',()=>lightbox.style.display='none');
+lightbox.addEventListener('click',e=>{if(e.target===lightbox) lightbox.style.display='none';});
+lightboxPrev.addEventListener('click',()=>{currentIndex=(currentIndex-1+projects.length)%projects.length;openLightbox(currentIndex);});
+lightboxNext.addEventListener('click',()=>{currentIndex=(currentIndex+1)%projects.length;openLightbox(currentIndex);});
 
-lightboxPrev.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + projects.length) % projects.length;
-  openLightbox(currentIndex);
-});
-lightboxNext.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % projects.length;
-  openLightbox(currentIndex);
-});
-
-// Animated Experience Counters
+// Counters
 const counters = document.querySelectorAll('.counter');
 const counterSection = document.getElementById('experience');
-const counterObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const counterObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
     if(entry.isIntersecting){
-      counters.forEach(counter => {
-        const updateCount = () => {
-          const target = +counter.getAttribute('data-target');
-          const count = +counter.innerText;
-          const increment = Math.ceil(target / 200);
-          if(count < target){
-            counter.innerText = count + increment;
-            setTimeout(updateCount, 20);
-          } else {
-            counter.innerText = target;
-          }
+      counters.forEach(counter=>{
+        const updateCount=()=>{
+          const target=+counter.getAttribute('data-target');
+          const count=+counter.innerText;
+          const increment=Math.ceil(target/200);
+          if(count<target){counter.innerText=count+increment;setTimeout(updateCount,20);} 
+          else{counter.innerText=target;}
         };
         updateCount();
       });
       counterObserver.unobserve(counterSection);
     }
   });
-}, {threshold: 0.5});
+},{threshold:0.5});
 counterObserver.observe(counterSection);
 
 // =====================
-// EmailJS Contact Form
+// EmailJS Contact Form Fixed
 // =====================
-emailjs.init('oKiMYahq-jcUHrFZB'); // Your User ID
+emailjs.init('oKiMYahq-jcUHrFZB'); // User ID
 
-document.getElementById('contact-form').addEventListener('submit', function(e){
+const contactForm=document.getElementById('contact-form');
+const formMsg=document.querySelector('.form-msg');
+
+contactForm.addEventListener('submit',function(e){
   e.preventDefault();
-  emailjs.sendForm('service_jkz24uj','template_ckkn8rl', this)
-    .then(() => { 
-      document.querySelector('.form-msg').innerText = "Message Sent Successfully!";
-      this.reset();
-    })
-    .catch(() => { 
-      document.querySelector('.form-msg').innerText = "Failed to send message. Try again later.";
+  const formData={
+    name:contactForm.querySelector('input[name="name"]').value,
+    email:contactForm.querySelector('input[name="email"]').value,
+    message:contactForm.querySelector('textarea[name="message"]').value
+  };
+  emailjs.send('service_jkz24uj','template_ckkn8rl',formData)
+    .then(response=>{
+      formMsg.style.color="#88d3ce";
+      formMsg.innerText="Message Sent Successfully!";
+      contactForm.reset();
+      console.log('SUCCESS!',response.status,response.text);
+    },err=>{
+      formMsg.style.color="red";
+      formMsg.innerText="Failed to send message. Try again later.";
+      console.error('FAILED...',err);
     });
 });
