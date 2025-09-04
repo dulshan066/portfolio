@@ -4,12 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dulshan Kokila Senavirathna | Portfolio</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Noto+Sans+Sinhala&family=Noto+Sans+JP&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ========= BASIC STYLES ========= */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; line-height: 1.6; background: #111; color: #eee; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3 { margin-bottom: 10px; }
+    section { padding: 60px 20px; text-align: center; }
+
+    /* ========= NAVIGATION ========= */
+    nav { background: #222; padding: 10px 20px; position: fixed; top: 0; width: 100%; z-index: 1000; }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 20px; font-weight: bold; color: #0ef; }
+    .nav-list { list-style: none; display: flex; gap: 15px; }
+    .nav-list li a { padding: 5px 10px; transition: 0.3s; }
+    .nav-list li a:hover { background: #0ef; color: #111; border-radius: 5px; }
+    .language-switcher button { margin-left: 5px; padding: 5px 8px; cursor: pointer; border: none; border-radius: 5px; }
+    .language-switcher button:hover { background: #0ef; color: #111; }
+
+    /* ========= HERO ========= */
+    header { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color: white; }
+    header .btn { margin-top: 20px; padding: 10px 20px; background: #0ef; color: #111; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+    header .btn:hover { background: white; color: #111; }
+
+    /* ========= SKILLS ========= */
+    .skills-container { max-width: 600px; margin: auto; }
+    .skill { margin: 15px 0; text-align: left; }
+    .skill-bar { background: #444; border-radius: 20px; overflow: hidden; }
+    .skill-fill { background: #0ef; height: 20px; width: 0; transition: width 2s; }
+
+    /* ========= EXPERIENCE ========= */
+    .experience-container { display: flex; justify-content: center; gap: 30px; }
+    .counter-card { background: #222; padding: 20px; border-radius: 10px; width: 150px; }
+
+    /* ========= PROJECTS ========= */
+    .carousel { position: relative; overflow: hidden; max-width: 800px; margin: auto; }
+    .carousel-track { display: flex; transition: transform 0.5s ease; }
+    .project-card { background: #222; margin: 10px; padding: 15px; border-radius: 10px; min-width: 300px; }
+    .project-card img { width: 100%; border-radius: 10px; }
+    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: #0ef; color: #111; border: none; padding: 10px; cursor: pointer; border-radius: 50%; }
+    .carousel-btn.left { left: 10px; }
+    .carousel-btn.right { right: 10px; }
+
+    /* ========= CONTACT ========= */
+    .contact-container { max-width: 600px; margin: auto; }
+    form input, form textarea { width: 100%; margin: 10px 0; padding: 10px; border: none; border-radius: 5px; }
+    form button { padding: 10px 20px; border: none; border-radius: 5px; background: #0ef; color: #111; font-weight: bold; cursor: pointer; }
+
+    /* ========= FOOTER ========= */
+    footer { background: #222; text-align: center; padding: 15px; }
+
+    /* ========= LIGHTBOX ========= */
+    .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; flex-direction: column; }
+    .lightbox img { max-width: 80%; border-radius: 10px; }
+    .lightbox-close { color: white; font-size: 30px; cursor: pointer; margin-bottom: 20px; }
+
+    /* ========= LANGUAGE FONTS ========= */
+    body.si { font-family: 'Noto Sans Sinhala', sans-serif; }
+    body.jp { font-family: 'Noto Sans JP', sans-serif; }
+  </style>
 </head>
 <body class="en">
 
-  <!-- ================== Navigation ================== -->
+  <!-- ========= NAV ========= -->
   <nav>
     <div class="nav-container">
       <div class="logo">Dulshan</div>
@@ -18,7 +78,6 @@
         <button id="si-btn">සිංහල</button>
         <button id="jp-btn">日本語</button>
       </div>
-      <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
       <ul class="nav-list">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -29,23 +88,20 @@
     </div>
   </nav>
 
-  <!-- ================== Hero ================== -->
+  <!-- ========= HERO ========= -->
   <header>
-    <div class="hero-content">
-      <h1 class="typed"></h1>
-      <p class="typed-subtitle">Undergraduate at LNBTI | BSc (Hons) Computing</p>
-      <a href="#contact" class="btn">Contact Me</a>
-    </div>
-    <div class="hero-bg"></div>
+    <h1 class="typed"></h1>
+    <p class="typed-subtitle">Undergraduate at LNBTI | BSc (Hons) Computing</p>
+    <a href="#contact" class="btn">Contact Me</a>
   </header>
 
-  <!-- ================== About ================== -->
+  <!-- ========= ABOUT ========= -->
   <section id="about">
     <h2>About</h2>
     <p>Hello! I'm an undergraduate pursuing a BSc (Hons) in Computing at LNBTI.</p>
   </section>
 
-  <!-- ================== Skills ================== -->
+  <!-- ========= SKILLS ========= -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills-container">
@@ -60,7 +116,7 @@
     </div>
   </section>
 
-  <!-- ================== Experience ================== -->
+  <!-- ========= EXPERIENCE ========= -->
   <section id="experience">
     <h2>Experience</h2>
     <div class="experience-container">
@@ -75,19 +131,19 @@
     </div>
   </section>
 
-  <!-- ================== Projects ================== -->
+  <!-- ========= PROJECTS ========= -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="carousel">
       <button class="carousel-btn left">&#10094;</button>
       <div class="carousel-track">
         <div class="project-card">
-          <img src="project1.jpg" alt="Project 1">
+          <img src="https://via.placeholder.com/300" alt="Project 1">
           <h3>Project 1</h3>
           <p>Description of Project 1.</p>
         </div>
         <div class="project-card">
-          <img src="project2.jpg" alt="Project 2">
+          <img src="https://via.placeholder.com/300" alt="Project 2">
           <h3>Project 2</h3>
           <p>Description of Project 2.</p>
         </div>
@@ -96,7 +152,7 @@
     </div>
   </section>
 
-  <!-- ================== Contact ================== -->
+  <!-- ========= CONTACT ========= -->
   <section id="contact">
     <h2>Contact</h2>
     <div class="contact-container">
@@ -110,12 +166,12 @@
     </div>
   </section>
 
-  <!-- ================== Footer ================== -->
+  <!-- ========= FOOTER ========= -->
   <footer>
     <p>© 2025 Sri Dulshan Kokila Senavirathna. All rights reserved.</p>
   </footer>
 
-  <!-- ================== Lightbox ================== -->
+  <!-- ========= LIGHTBOX ========= -->
   <div class="lightbox">
     <span class="lightbox-close">&times;</span>
     <img class="lightbox-img" src="" alt="">
@@ -123,7 +179,97 @@
     <p class="lightbox-desc"></p>
   </div>
 
-  <!-- ================== Scripts ================== -->
-  <script src="script.js"></script>
+  <!-- ========= JAVASCRIPT ========= -->
+  <script>
+    /* ========== LANGUAGE DATA ========== */
+    const translations = {
+      en: { about: "About", skills: "Skills", experience: "Experience", projects: "Projects", contact: "Contact", hero: "Hi, I'm Dulshan Kokila Senavirathna" },
+      si: { about: "මගේ ගැන", skills: "නැම", experience: "අත්දැකීම්", projects: "ව්‍යාපෘති", contact: "අමතන්න", hero: "හෙලෝ, මම දුල්ෂන් කෝකිලා සෙනවිරත්නයි" },
+      jp: { about: "私について", skills: "スキル", experience: "経験", projects: "プロジェクト", contact: "連絡先", hero: "こんにちは、私はドルシャン・コキラ・セナビラトナです" }
+    };
+
+    const typedElement = document.querySelector(".typed");
+    function typeText(text) {
+      typedElement.textContent = "";
+      let i = 0;
+      function typing() {
+        if (i < text.length) {
+          typedElement.textContent += text.charAt(i);
+          i++;
+          setTimeout(typing, 100);
+        }
+      }
+      typing();
+    }
+    typeText(translations.en.hero);
+
+    document.getElementById("en-btn").addEventListener("click", () => switchLang("en"));
+    document.getElementById("si-btn").addEventListener("click", () => switchLang("si"));
+    document.getElementById("jp-btn").addEventListener("click", () => switchLang("jp"));
+
+    function switchLang(lang) {
+      document.body.className = lang;
+      document.querySelector("h1.typed").textContent = "";
+      typeText(translations[lang].hero);
+      document.querySelector("#about h2").textContent = translations[lang].about;
+      document.querySelector("#skills h2").textContent = translations[lang].skills;
+      document.querySelector("#experience h2").textContent = translations[lang].experience;
+      document.querySelector("#projects h2").textContent = translations[lang].projects;
+      document.querySelector("#contact h2").textContent = translations[lang].contact;
+    }
+
+    /* ========== SKILL ANIMATION ========== */
+    const skillFills = document.querySelectorAll(".skill-fill");
+    window.addEventListener("scroll", () => {
+      skillFills.forEach(fill => {
+        const rect = fill.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          fill.style.width = fill.dataset.width;
+        }
+      });
+    });
+
+    /* ========== COUNTER ========== */
+    const counters = document.querySelectorAll(".counter");
+    counters.forEach(counter => {
+      const updateCounter = () => {
+        const target = +counter.dataset.target;
+        const count = +counter.innerText;
+        const increment = target / 200;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCounter, 30);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCounter();
+    });
+
+    /* ========== CAROUSEL ========== */
+    const track = document.querySelector(".carousel-track");
+    const prevBtn = document.querySelector(".carousel-btn.left");
+    const nextBtn = document.querySelector(".carousel-btn.right");
+    let index = 0;
+    nextBtn.addEventListener("click", () => {
+      index++;
+      if (index >= track.children.length) index = 0;
+      track.style.transform = `translateX(-${index * 320}px)`;
+    });
+    prevBtn.addEventListener("click", () => {
+      index--;
+      if (index < 0) index = track.children.length - 1;
+      track.style.transform = `translateX(-${index * 320}px)`;
+    });
+
+    /* ========== CONTACT FORM (Dummy) ========== */
+    const form = document.getElementById("contact-form");
+    const formMsg = document.querySelector(".form-msg");
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      formMsg.textContent = "✅ Message sent successfully!";
+      form.reset();
+    });
+  </script>
 </body>
 </html>
