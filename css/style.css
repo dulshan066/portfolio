@@ -7,13 +7,40 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #121212;
-  color: #f5f5f5;
   scroll-behavior: smooth;
 }
 body.si { font-family: 'Noto Sans Sinhala', sans-serif; }
 body.jp { font-family: 'Noto Sans JP', sans-serif; }
+
 a { text-decoration: none; color: inherit; }
 h2 { font-size: 2.5rem; margin-bottom: 20px; text-align: center; }
+
+/* ================== Language Switcher ================== */
+.lang { display: none; }
+body.en .lang.en { display: inline; }
+body.si .lang.si { display: inline; }
+body.jp .lang.jp { display: inline; }
+
+.lang-switcher {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 1001;
+}
+.lang-switcher button {
+  background: #88d3ce;
+  color: #121212;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.lang-switcher button:hover {
+  background: #6e45e2;
+  color: #fff;
+}
 
 /* ================== Navigation ================== */
 nav {
@@ -39,7 +66,8 @@ nav {
   font-weight: 600;
   transition: color 0.3s;
 }
-.nav-list li a:hover, .nav-list li a.active { color: #88d3ce; }
+.nav-list li a:hover,
+.nav-list li a.active { color: #88d3ce; }
 .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
 
 /* ================== Hero ================== */
@@ -72,7 +100,10 @@ header .btn:hover { transform: scale(1.05); }
   animation: rotate 20s linear infinite;
   z-index: 0;
 }
-@keyframes rotate { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+@keyframes rotate {
+  from { transform: rotate(0deg);}
+  to { transform: rotate(360deg);}
+}
 
 /* ================== Sections ================== */
 section {
@@ -83,7 +114,10 @@ section {
   transform: translateY(20px);
   transition: all 1s ease-out;
 }
-section.appear { opacity: 1; transform: translateY(0); }
+section.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ================== About ================== */
 .personal-info p { margin: 5px 0; }
@@ -126,7 +160,10 @@ section.appear { opacity: 1; transform: translateY(0); }
 
 /* ================== Projects ================== */
 .carousel { position: relative; overflow: hidden; }
-.carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
 .project-card {
   background: #1e1e1e;
   flex: 0 0 300px;
@@ -156,10 +193,14 @@ section.appear { opacity: 1; transform: translateY(0); }
 .lightbox-img { max-width: 80%; max-height: 60%; margin-bottom: 10px; }
 .lightbox-title { font-size: 1.5rem; margin-bottom: 10px; text-align: center; }
 .lightbox-desc { text-align: center; margin-bottom: 10px; }
-.lightbox-close { position:absolute; top:20px; right:30px; font-size:2rem; cursor:pointer; }
+.lightbox-close {
+  position:absolute; top:20px; right:30px;
+  font-size:2rem; cursor:pointer;
+}
 .lightbox-prev, .lightbox-next {
   position:absolute; top:50%; transform: translateY(-50%);
-  background:#88d3ce; border:none; padding:10px; border-radius:50%; cursor:pointer; color:#121212;
+  background:#88d3ce; border:none; padding:10px;
+  border-radius:50%; cursor:pointer; color:#121212;
 }
 .lightbox-prev { left:20px; }
 .lightbox-next { right:20px; }
@@ -184,26 +225,37 @@ section.appear { opacity: 1; transform: translateY(0); }
 #contact-form input,
 #contact-form textarea {
   width: 100%; padding: 10px; margin: 10px 0;
-  border-radius: 5px; border:none; background:#1e1e1e; color:#f5f5f5;
+  border-radius: 5px; border:none;
+  background:#1e1e1e; color:#f5f5f5;
 }
 #contact-form button {
-  padding: 10px 20px; background:#88d3ce; border:none; color:#121212;
-  font-weight:bold; border-radius:5px; cursor:pointer; transition: transform 0.3s;
+  padding: 10px 20px; background:#88d3ce;
+  border:none; color:#121212;
+  font-weight:bold; border-radius:5px;
+  cursor:pointer; transition: transform 0.3s;
 }
 #contact-form button:hover { transform: scale(1.05); }
 .form-msg { margin-top:10px; }
 
 /* ================== Footer ================== */
-footer { text-align: center; padding: 20px; background:#1e1e1e; margin-top:40px; }
+footer {
+  text-align: center;
+  padding: 20px;
+  background:#1e1e1e;
+  margin-top:40px;
+}
 
 /* ================== Responsive ================== */
 @media(max-width:768px){
   .nav-list {
     display: none; flex-direction: column; background:#1e1e1e;
-    position:absolute; top:60px; right:0; width:200px; padding:10px;
+    position:absolute; top:60px; right:0;
+    width:200px; padding:10px;
   }
   .nav-list.active { display:flex; }
   .menu-toggle { display:block; }
-  .skills-container, .experience-container { flex-direction: column; align-items: center; }
+  .skills-container, .experience-container {
+    flex-direction: column; align-items: center;
+  }
   .carousel-track { flex-wrap: nowrap; }
 }

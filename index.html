@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sri Dulshan Kokila Senavirathna Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+JP&family=Noto+Sans+Sinhala&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body class="en">
 
-  <!-- Language Switch -->
-  <div class="lang-switch">
+  <!-- Language Switcher -->
+  <div class="lang-switcher">
     <button onclick="setLang('en')">EN</button>
     <button onclick="setLang('si')">SI</button>
     <button onclick="setLang('jp')">JP</button>
@@ -38,19 +38,20 @@
     <div class="hero">
       <h1>
         <span class="lang en">Hi, I'm Sri Dulshan Kokila Senavirathna</span>
-        <span class="lang si">හෙලෝ, මම ශ්‍රී දුල්ෂන් කොකිලා සේනවිරත්න</span>
-        <span class="lang jp">こんにちは、私はスリ・ドルシャン・コキラ・セナヴィラトナです</span>
+        <span class="lang si">හෙලෝ! මම ශ්‍රී දුල්ෂන් කොකිලා සේනවිරත්න</span>
+        <span class="lang jp">こんにちは！私はスリ・ドルシャン・コキラ・セナヴィラトナです</span>
       </h1>
       <p class="typed-subtitle">
         <span class="lang en">Undergraduate at LNBTI | BSc (Hons) Computing</span>
-        <span class="lang si">LNBTI උපාධි පාඨමාලා ශිෂ්‍යයෙක් | BSc (Hons) Computing</span>
-        <span class="lang jp">LNBTI学部在籍 | BSc (Hons) コンピューティング</span>
+        <span class="lang si">LNBTI හි අධ්‍යයන සිසුවෙක් | BSc (Hons) Computing</span>
+        <span class="lang jp">LNBTIの学部生 | BSc (Hons) コンピューティング</span>
       </p>
       <a href="#projects" class="btn">
         <span class="lang en">View My Work</span>
         <span class="lang si">මගේ වැඩ බලන්න</span>
         <span class="lang jp">作品を見る</span>
       </a>
+      <div class="hero-bg"></div>
     </div>
   </header>
 
@@ -58,13 +59,22 @@
   <section id="about" class="fade-in">
     <h2>
       <span class="lang en">About Me</span>
-      <span class="lang si">මම ගැන</span>
+      <span class="lang si">ම ගැන</span>
       <span class="lang jp">私について</span>
     </h2>
     <p>
-      <span class="lang en">Hello! I'm Sri Dulshan Kokila Senavirathna, born on April 21, 2001. I am passionate about Embedded Systems, Web Development, and creating innovative tech solutions.</span>
-      <span class="lang si">හෙලෝ! මම ශ්‍රී දුල්ෂන් කොකිලා සේනවිරත්න. 2001 අප්‍රේල් 21 වන දින උපන්. මම Embedded Systems, Web Development, සහ නව්‍ය තාක්ෂණික විසඳුම් පිළිබඳ උනන්දුවෙන් සිටිමි.</span>
-      <span class="lang jp">こんにちは！私はスリ・ドルシャン・コキラ・セナヴィラトナです。2001年4月21日生まれです。組み込みシステム、ウェブ開発、革新的な技術ソリューションに情熱を注いでいます。</span>
+      <span class="lang en">
+        Hello! I'm Sri Dulshan Kokila Senavirathna, born on April 21, 2001. 
+        I currently reside in Matale, Sri Lanka. I am passionate about Embedded Systems, Web Development, and AI projects.
+      </span>
+      <span class="lang si">
+        හෙලෝ! මම ශ්‍රී දුල්ෂන් කොකිලා සේනවිරත්න, 2001 අප්‍රේල් 21 වනදා උපත ලැබූවා. 
+        මේ වන විට මා මතලේ, ශ්‍රී ලංකාවේ නිවසේ සිටිමි. මම Embedded Systems, Web Development සහ AI ව්‍යාපෘති වලට ආසයි.
+      </span>
+      <span class="lang jp">
+        こんにちは！私はスリ・ドルシャン・コキラ・セナヴィラトナ、2001年4月21日生まれです。
+        現在、スリランカのマタレーに住んでいます。私は組み込みシステム、ウェブ開発、AIプロジェクトに情熱を持っています。
+      </span>
     </p>
   </section>
 
@@ -72,33 +82,48 @@
   <section id="skills" class="fade-in">
     <h2>
       <span class="lang en">Skills</span>
-      <span class="lang si">නපුරුෂ</span>
+      <span class="lang si">දක්ෂතා</span>
       <span class="lang jp">スキル</span>
     </h2>
     <div class="skills-container">
       <div class="skill">
-        <h3>
-          <span class="lang en">Embedded Systems</span>
-          <span class="lang si">එම්බෙඩඩ් පද්ධති</span>
-          <span class="lang jp">組み込みシステム</span>
-        </h3>
+        <h3>Embedded Systems</h3>
         <div class="skill-bar"><div class="skill-fill" data-fill="90%"></div></div>
       </div>
       <div class="skill">
-        <h3>
-          <span class="lang en">Web Development</span>
-          <span class="lang si">වෙබ් සංවර්ධන</span>
-          <span class="lang jp">ウェブ開発</span>
-        </h3>
+        <h3>Web Development</h3>
         <div class="skill-bar"><div class="skill-fill" data-fill="85%"></div></div>
       </div>
       <div class="skill">
-        <h3>
-          <span class="lang en">Python & AI</span>
-          <span class="lang si">පයිතන් සහ AI</span>
-          <span class="lang jp">PythonとAI</span>
-        </h3>
+        <h3>Python & AI</h3>
         <div class="skill-bar"><div class="skill-fill" data-fill="80%"></div></div>
+      </div>
+      <div class="skill">
+        <h3>PHP & Databases</h3>
+        <div class="skill-bar"><div class="skill-fill" data-fill="75%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="fade-in">
+    <h2>
+      <span class="lang en">Experience</span>
+      <span class="lang si">අත්දැකීම්</span>
+      <span class="lang jp">経験</span>
+    </h2>
+    <div class="experience-container">
+      <div class="counter-card">
+        <h3><span class="lang en">Projects Completed</span><span class="lang si">අවසන් වු ව්‍යාපෘති</span><span class="lang jp">完成したプロジェクト</span></h3>
+        <span class="counter" data-target="25">0</span>
+      </div>
+      <div class="counter-card">
+        <h3><span class="lang en">Clients Worked</span><span class="lang si">ගනුදෙනුකරුවන්</span><span class="lang jp">クライアント数</span></h3>
+        <span class="counter" data-target="10">0</span>
+      </div>
+      <div class="counter-card">
+        <h3><span class="lang en">Years of Experience</span><span class="lang si">අත්දැකීම් වසර</span><span class="lang jp">経験年数</span></h3>
+        <span class="counter" data-target="3">0</span>
       </div>
     </div>
   </section>
@@ -112,14 +137,12 @@
     </h2>
     <div class="carousel">
       <div class="carousel-track">
-        <div class="project-card" data-title="Smart Dustbin" data-description="Automated waste sorting system with sensors.">
-          <img src="images/project1.png" alt="Smart Dustbin">
-          <h3>Smart Dustbin</h3>
+        <!-- Example Project -->
+        <div class="project-card" data-title="Smart Dustbin System" data-description="An automated waste sorting system using sensors and AI." data-image="images/project1.png">
+          <img src="images/project1.png" alt="Smart Dustbin System">
+          <h3>Smart Dustbin System</h3>
         </div>
-        <div class="project-card" data-title="Ground Booking" data-description="Web-based booking system with full CRUD functionality.">
-          <img src="images/project2.png" alt="Ground Booking">
-          <h3>Ground Booking</h3>
-        </div>
+        <!-- Add more projects -->
       </div>
       <button class="carousel-btn left"><i class="fas fa-chevron-left"></i></button>
       <button class="carousel-btn right"><i class="fas fa-chevron-right"></i></button>
@@ -133,24 +156,26 @@
       <span class="lang si">සම්බන්ධ වන්න</span>
       <span class="lang jp">お問い合わせ</span>
     </h2>
-    <form id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-      <p class="form-msg"></p>
-    </form>
+    <div class="contact-container">
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">
+          <span class="lang en">Send Message</span>
+          <span class="lang si">පණිවිඩය යවන්න</span>
+          <span class="lang jp">送信</span>
+        </button>
+        <p class="form-msg"></p>
+      </form>
+    </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Sri Dulshan Kokila Senavirathna. All rights reserved.</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="js/script.js"></script>
-  <script>
-    function setLang(lang){
-      document.body.className = lang;
-    }
-  </script>
 </body>
 </html>
