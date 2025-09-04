@@ -1,9 +1,9 @@
-// Mobile menu toggle
+// Mobile Menu Toggle
 const menuToggle = document.getElementById('mobile-menu');
 const navList = document.querySelector('.nav-list');
 menuToggle.addEventListener('click', () => navList.classList.toggle('active'));
 
-// Smooth scroll for nav links
+// Smooth Scroll
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -12,7 +12,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
-// Fade-in on scroll
+// Fade-in on Scroll
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
@@ -24,15 +24,21 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
 }, appearOptions);
 faders.forEach(fader => appearOnScroll.observe(fader));
 
-// Typed animation
+// Typed Hero Animation
 const typedText = document.querySelector('.typed');
 const fullText = typedText.textContent;
 typedText.textContent = '';
 let index = 0;
-function type() { if(index < fullText.length) { typedText.textContent += fullText[index]; index++; setTimeout(type, 80); } }
+function type() {
+  if (index < fullText.length) {
+    typedText.textContent += fullText[index];
+    index++;
+    setTimeout(type, 80);
+  }
+}
 window.addEventListener('load', type);
 
-// Skills animation
+// Skills Bar Animation
 const skillFills = document.querySelectorAll('.skill-fill');
 const skillsSection = document.getElementById('skills');
 const skillObserver = new IntersectionObserver(entries => {
@@ -45,7 +51,7 @@ const skillObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 skillObserver.observe(skillsSection);
 
-// Active nav link on scroll
+// Active Nav Link Highlight
 const sections = document.querySelectorAll('section');
 window.addEventListener('scroll', () => {
   let current = '';
@@ -59,22 +65,24 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Projects carousel
+// Projects Carousel
 const track = document.querySelector('.carousel-track');
 const btnLeft = document.querySelector('.carousel-btn.left');
 const btnRight = document.querySelector('.carousel-btn.right');
 let position = 0;
 const slideWidth = 320;
+
 btnRight.addEventListener('click', () => {
   if(position > -(track.children.length - 3) * slideWidth) position -= slideWidth;
   track.style.transform = `translateX(${position}px)`;
 });
+
 btnLeft.addEventListener('click', () => {
-  if(position < 0) position += slideWidth;
+  if(position < 0) position += slideWidth
   track.style.transform = `translateX(${position}px)`;
 });
 
-// Lightbox functionality with navigation
+// Lightbox Functionality
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.querySelector('.lightbox-img');
 const lightboxTitle = document.querySelector('.lightbox-title');
@@ -106,4 +114,47 @@ lightboxPrev.addEventListener('click', () => {
 lightboxNext.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % projects.length;
   openLightbox(currentIndex);
+});
+
+// Animated Experience Counters
+const counters = document.querySelectorAll('.counter');
+const counterSection = document.getElementById('experience');
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = Math.ceil(target / 200);
+          if(count < target){
+            counter.innerText = count + increment;
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
+      });
+      counterObserver.unobserve(counterSection);
+    }
+  });
+}, {threshold: 0.5});
+counterObserver.observe(counterSection);
+
+// =====================
+// EmailJS Contact Form
+// =====================
+emailjs.init('oKiMYahq-jcUHrFZB'); // Your User ID
+
+document.getElementById('contact-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  emailjs.sendForm('service_jkz24uj','template_ckkn8rl', this)
+    .then(() => { 
+      document.querySelector('.form-msg').innerText = "Message Sent Successfully!";
+      this.reset();
+    })
+    .catch(() => { 
+      document.querySelector('.form-msg').innerText = "Failed to send message. Try again later.";
+    });
 });

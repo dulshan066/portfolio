@@ -18,6 +18,7 @@
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
@@ -74,6 +75,25 @@
     </div>
   </section>
 
+  <!-- Experience Section -->
+  <section id="experience" class="fade-in">
+    <h2>Experience</h2>
+    <div class="experience-container">
+      <div class="counter-card">
+        <h3>Projects Completed</h3>
+        <span class="counter" data-target="25">0</span>
+      </div>
+      <div class="counter-card">
+        <h3>Clients Worked</h3>
+        <span class="counter" data-target="10">0</span>
+      </div>
+      <div class="counter-card">
+        <h3>Years of Experience</h3>
+        <span class="counter" data-target="3">0</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
   <section id="projects" class="fade-in">
     <h2>Projects</h2>
@@ -107,29 +127,34 @@
     </div>
   </section>
 
+  <!-- Floating Social Icons -->
+  <div class="social-float">
+    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+  </div>
+
   <!-- Contact Section -->
   <section id="contact" class="fade-in">
     <h2>Contact Me</h2>
-    <div class="contact-cards">
-      <div class="contact-card">
-        <i class="fas fa-envelope"></i>
-        <p>Email: <a href="mailto:dulshan@example.com">dulshan@example.com</a></p>
-      </div>
-      <div class="contact-card">
-        <i class="fab fa-linkedin"></i>
-        <p>LinkedIn: <a href="#">linkedin.com/in/dulshan</a></p>
-      </div>
-      <div class="contact-card">
-        <i class="fab fa-github"></i>
-        <p>GitHub: <a href="#">github.com/dulshan</a></p>
-      </div>
+    <div class="contact-container">
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <p class="form-msg"></p>
+      </form>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Sri Dulshan Kokila Senavirathna. All rights reserved.</p>
+    <p>&copy; 2025  Dulshan Kokila Senavirathna. All rights reserved.</p>
   </footer>
 
+  <!-- EmailJS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
