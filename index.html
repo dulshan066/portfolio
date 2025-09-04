@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sri Dulshan Kokila Senavirathna Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+Sinhala&family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="en">
 
   <!-- Navigation -->
   <nav>
     <div class="nav-container">
       <div class="logo">Dulshan</div>
+      <div class="language-switcher">
+        <button id="en-btn">EN</button>
+        <button id="si-btn">සිංහල</button>
+        <button id="jp-btn">日本語</button>
+      </div>
       <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
       <ul class="nav-list">
         <li><a href="#home" class="nav-link">Home</a></li>
@@ -29,8 +35,8 @@
   <!-- Hero Section -->
   <header id="home">
     <div class="hero">
-      <h1>Hi, I'm <span class="typed">Sri Parakramabahu Patabandi Gedara Dulshan Kokila Senavirathna</span></h1>
-      <p class="typed-subtitle">Undergraduate at LNBTI | BSc (Hons) Computing</p>
+      <h1><span class="typed"></span></h1>
+      <p class="typed-subtitle"></p>
       <a href="#projects" class="btn">View My Work</a>
       <div class="hero-bg"></div>
     </div>
@@ -38,13 +44,8 @@
 
   <!-- About Section -->
   <section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p>
-      Hello! I'm <strong>Sri Parakramabahu Patabandi Gedara Dulshan Kokila Senavirathna</strong>, born on <strong>April 21, 2001</strong>. 
-      I currently reside at <strong>No 95, Welegedarawatta, Marukona, Ukuwela, Matale, Sri Lanka</strong>. 
-      I am an undergraduate student at <strong>Lanka Nippon BizTech Institute (LNBTI)</strong>, pursuing a <strong>BSc (Hons) in Computing</strong>. 
-      I am passionate about Embedded Systems, Web Development, and creating innovative tech solutions.
-    </p>
+    <h2></h2>
+    <p></p>
     <div class="personal-info">
       <p><strong>Full Name:</strong> Sri Parakramabahu Patabandi Gedara Dulshan Kokila Senavirathna</p>
       <p><strong>Date of Birth:</strong> April 21, 2001</p>
@@ -55,7 +56,7 @@
 
   <!-- Skills Section -->
   <section id="skills" class="fade-in">
-    <h2>Skills</h2>
+    <h2></h2>
     <div class="skills-container">
       <div class="skill">
         <h3>Embedded Systems</h3>
@@ -78,7 +79,7 @@
 
   <!-- Experience Section -->
   <section id="experience" class="fade-in">
-    <h2>Experience</h2>
+    <h2></h2>
     <div class="experience-container">
       <div class="counter-card">
         <h3>Projects Completed</h3>
@@ -97,7 +98,7 @@
 
   <!-- Projects Section -->
   <section id="projects" class="fade-in">
-    <h2>Projects</h2>
+    <h2></h2>
     <div class="carousel">
       <div class="carousel-track">
         <div class="project-card" data-title="Smart Dustbin System" data-description="An automated waste sorting system using sensors and AI." data-image="images/project1.png">
@@ -138,7 +139,7 @@
 
   <!-- Contact Section -->
   <section id="contact" class="fade-in">
-    <h2>Contact Me</h2>
+    <h2></h2>
     <div class="contact-container">
       <form id="contact-form">
         <input type="text" name="name" placeholder="Your Name" required>
@@ -151,10 +152,10 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Sri Dulshan Kokila Senavirathna. All rights reserved.</p>
+    <p></p>
   </footer>
 
-  <!-- EmailJS Library -->
+  <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
   <script src="js/script.js"></script>
 </body>

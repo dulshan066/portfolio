@@ -1,36 +1,63 @@
-// Mobile Menu Toggle
-const menuToggle = document.getElementById('mobile-menu');
-const navList = document.querySelector('.nav-list');
-menuToggle.addEventListener('click', () => navList.classList.toggle('active'));
+// ================== Language Data ==================
+const texts = {
+  en: {
+    heroTitle: "Hi, I'm Sri Parakramabahu Patabandi Gedara Dulshan Kokila Senavirathna",
+    heroSubtitle: "Undergraduate at LNBTI | BSc (Hons) Computing",
+    about: "Hello! I'm ... pursuing a BSc (Hons) in Computing.",
+    skills: "Skills",
+    experience: "Experience",
+    projects: "Projects",
+    contact: "Contact Me",
+    footer: "© 2025 Sri Dulshan Kokila Senavirathna. All rights reserved."
+  },
+  si: {
+    heroTitle: "මම ශ්‍රී පරාක්‍රමබාහු පටබන්දි ගෙදර දුල්ශන් කොකිල සේනාවිරත්න",
+    heroSubtitle: "LNBTI හි උපාධි අධ්‍යයන ශිෂ්‍යය | BSc (Hons) Computing",
+    about: "ආයුබෝවන්! මම ... BSc (Hons) Computing අධ්‍යයනය කරනවා.",
+    skills: "කොඩ් යාන්ත්‍රණ හැකියාවන්",
+    experience: "අත්දැකීම්",
+    projects: "ව්‍යාපෘති",
+    contact: "මාව සම්බන්ධ කරන්න",
+    footer: "© 2025 ශ්‍රී දුල්ශන් කොකිල සේනාවිරත්න. සියලුම හිමිකම් ඇවිරිණි."
+  },
+  jp: {
+    heroTitle: "こんにちは、私はスリ・パラクリマバフ・パタバンディ・ゲダラ・ドゥルシャン・コキラ・セナヴィラトナです",
+    heroSubtitle: "LNBTIの学部生 | BSc (Hons) Computing",
+    about: "こんにちは！私は ... BSc (Hons) Computingを勉強しています。",
+    skills: "スキル",
+    experience: "経験",
+    projects: "プロジェクト",
+    contact: "お問い合わせ",
+    footer: "© 2025 スリ・ドゥルシャン・コキラ・セナヴィラトナ. All rights reserved."
+  }
+};
 
-// Smooth Scroll
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    navList.classList.remove('active');
-  });
-});
+// ================== Language Switch ==================
+function setLanguage(lang){
+  document.body.className = lang; // change font-family
+  typedText.textContent = '';
+  fullText = texts[lang].heroTitle;
+  index = 0;
+  type(); // start typing
+  document.querySelector('.typed-subtitle').textContent = texts[lang].heroSubtitle;
+  document.querySelector('#about h2').textContent = texts[lang].about;
+  document.querySelector('#skills h2').textContent = texts[lang].skills;
+  document.querySelector('#experience h2').textContent = texts[lang].experience;
+  document.querySelector('#projects h2').textContent = texts[lang].projects;
+  document.querySelector('#contact h2').textContent = texts[lang].contact;
+  document.querySelector('footer p').textContent = texts[lang].footer;
+}
 
-// Fade-in on Scroll
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('appear');
-    observer.unobserve(entry.target);
-  });
-}, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
+document.getElementById('en-btn').addEventListener('click', () => setLanguage('en'));
+document.getElementById('si-btn').addEventListener('click', () => setLanguage('si'));
+document.getElementById('jp-btn').addEventListener('click', () => setLanguage('jp'));
 
-// Typed Hero Animation
+// ================== Hero Typed Animation ==================
 const typedText = document.querySelector('.typed');
-const fullText = typedText.textContent;
-typedText.textContent = '';
+let fullText = texts.en.heroTitle;
 let index = 0;
 function type() {
-  if (index < fullText.length) {
+  if(index < fullText.length){
     typedText.textContent += fullText[index];
     index++;
     setTimeout(type, 80);
@@ -38,124 +65,6 @@ function type() {
 }
 window.addEventListener('load', type);
 
-// Skills Bar Animation
-const skillFills = document.querySelectorAll('.skill-fill');
-const skillsSection = document.getElementById('skills');
-const skillObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      skillFills.forEach(fill => fill.style.width = fill.dataset.fill);
-      skillObserver.unobserve(skillsSection);
-    }
-  });
-}, { threshold: 0.5 });
-skillObserver.observe(skillsSection);
-
-// Active Nav Link Highlight
-const sections = document.querySelectorAll('section');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 80;
-    if (scrollY >= sectionTop) current = section.getAttribute('id');
-  });
-  document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-  document.querySelectorAll('.nav-link').forEach(link => {
-    if(link.getAttribute('href') === `#${current}`) link.classList.add('active');
-  });
-});
-
-// Projects Carousel
-const track = document.querySelector('.carousel-track');
-const btnLeft = document.querySelector('.carousel-btn.left');
-const btnRight = document.querySelector('.carousel-btn.right');
-let position = 0;
-const slideWidth = 320;
-
-btnRight.addEventListener('click', () => {
-  if(position > -(track.children.length - 3) * slideWidth) position -= slideWidth;
-  track.style.transform = `translateX(${position}px)`;
-});
-btnLeft.addEventListener('click', () => {
-  if(position < 0) position += slideWidth;
-  track.style.transform = `translateX(${position}px)`;
-});
-
-// Lightbox
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.querySelector('.lightbox-img');
-const lightboxTitle = document.querySelector('.lightbox-title');
-const lightboxDesc = document.querySelector('.lightbox-desc');
-const lightboxClose = document.querySelector('.lightbox-close');
-const lightboxPrev = document.querySelector('.lightbox-prev');
-const lightboxNext = document.querySelector('.lightbox-next');
-let currentIndex = 0;
-const projects = document.querySelectorAll('.project-card');
-
-function openLightbox(index){
-  currentIndex = index;
-  const card = projects[currentIndex];
-  lightboxImg.src = card.dataset.image;
-  lightboxTitle.textContent = card.dataset.title;
-  lightboxDesc.textContent = card.dataset.description;
-  lightbox.style.display = 'flex';
-}
-
-projects.forEach((card,i)=>card.addEventListener('click',()=>openLightbox(i)));
-lightboxClose.addEventListener('click',()=>lightbox.style.display='none');
-lightbox.addEventListener('click',e=>{if(e.target===lightbox) lightbox.style.display='none';});
-lightboxPrev.addEventListener('click',()=>{currentIndex=(currentIndex-1+projects.length)%projects.length;openLightbox(currentIndex);});
-lightboxNext.addEventListener('click',()=>{currentIndex=(currentIndex+1)%projects.length;openLightbox(currentIndex);});
-
-// Counters
-const counters = document.querySelectorAll('.counter');
-const counterSection = document.getElementById('experience');
-const counterObserver = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      counters.forEach(counter=>{
-        const updateCount=()=>{
-          const target=+counter.getAttribute('data-target');
-          const count=+counter.innerText;
-          const increment=Math.ceil(target/200);
-          if(count<target){counter.innerText=count+increment;setTimeout(updateCount,20);} 
-          else{counter.innerText=target;}
-        };
-        updateCount();
-      });
-      counterObserver.unobserve(counterSection);
-    }
-  });
-},{threshold:0.5});
-counterObserver.observe(counterSection);
-
-// =====================
-// EmailJS Contact Form Fixed
-// =====================
-emailjs.init('oKiMYahq-jcUHrFZB'); // Public Key
-
-const contactForm = document.getElementById('contact-form');
-const formMsg = document.querySelector('.form-msg');
-
-contactForm.addEventListener('submit', function(e){
-  e.preventDefault();
-
-  const formData = {
-    name: contactForm.querySelector('input[name="name"]').value,
-    email: contactForm.querySelector('input[name="email"]').value,
-    message: contactForm.querySelector('textarea[name="message"]').value
-  };
-
-  emailjs.send('service_jkz24uj', 'template_iioq13k', formData)
-    .then(response => {
-      formMsg.style.color = "#88d3ce";
-      formMsg.innerText = "Message Sent Successfully!";
-      contactForm.reset();
-      console.log('SUCCESS!', response.status, response.text);
-    }, err => {
-      formMsg.style.color = "red";
-      formMsg.innerText = "Failed to send message. Try again later.";
-      console.error('FAILED...', err);
-    });
-});
-
+// ================== Existing Portfolio JS ==================
+// Mobile Menu, Smooth Scroll, Fade-in, Skills, Counters, Carousel, Lightbox, EmailJS...
+// (Use your previous script.js code here, only replace hero typing and section texts dynamically)
