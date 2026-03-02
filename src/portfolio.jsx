@@ -94,6 +94,8 @@ const ThemeProvider = ({ children }) => {
 
 const useTheme = () => useContext(ThemeContext);
 
+const PROJECT_PLACEHOLDER = `${import.meta.env.BASE_URL}project-placeholder.svg`;
+
 // ==================== DATA (enhanced) ====================
 const DATA = {
   name: "Dulshan Kokila Senavirathna",
@@ -138,7 +140,7 @@ const DATA = {
       repo: "https://github.com/dulshan066/SJM--Ai-Studio",
       live: "",
       featured: true,
-      image: "https://via.placeholder.com/600x400", // Replace with actual screenshot
+      image: PROJECT_PLACEHOLDER,
     },
     {
       name: "TechHub POS System (Mobile Shop)",
@@ -153,7 +155,7 @@ const DATA = {
       repo: "https://github.com/dulshan066/techhub-pos",
       live: "",
       featured: true,
-      image: "https://via.placeholder.com/600x400",
+      image: PROJECT_PLACEHOLDER,
     },
     {
       name: "Ground Booking & Management System",
@@ -168,7 +170,7 @@ const DATA = {
       repo: "https://github.com/dulshan066/Ground-manage",
       live: "",
       featured: false,
-      image: "https://via.placeholder.com/600x400",
+      image: PROJECT_PLACEHOLDER,
     },
   ],
 
